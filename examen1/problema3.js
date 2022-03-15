@@ -12,15 +12,14 @@ for(let i=0; i<50; i++){
     comida.tipos=(tipos[Math.floor(Math.random()*tipos.length)])
     comida.energias=(energias[Math.floor(Math.random()*energias.length)])
    
-    comidas.push(comida)
-    
-    const array = [
-    { tipos:"vegetal"},
-  ];
-  
-  const filtered = array.filter(function(element){
-    return energias>=200;
-  });
+    comidas.push(comida);
 }
-
-  console.log(filtered);
+    
+    const array = [];
+  let sumaCalorias = 0;
+  const filtered = comidas.filter(function(element){
+        sumaCalorias += (element.tipos==="vegetal" && element.energias>=200) ? element.energias : 0;
+      return (element.tipos==="vegetal" && element.energias>=200);
+  });
+console.log ("------ Comidas Vegetales con Mas de 200 calorias --------");
+console.log (filtered);
