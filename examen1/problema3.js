@@ -23,3 +23,6 @@ for(let i=0; i<50; i++){
   });
 console.log ("------ Comidas Vegetales con Mas de 200 calorias --------");
 console.log (filtered);
+
+console.log ("------ Suma total de Calorias --------");
+console.log (sumaCalorias);
