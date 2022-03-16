@@ -14,15 +14,17 @@ for(let i=0; i<50; i++){
    
     comidas.push(comida);
 }
-    
     const array = [];
-  let sumaCalorias = 0;
+  let suma_energias = 0;
   const filtered = comidas.filter(function(element){
-        sumaCalorias += (element.tipos==="vegetal" && element.energias>=200) ? element.energias : 0;
-      return (element.tipos==="vegetal" && element.energias>=200);
+      if (element.tipos=="vegetal"&&element.energias>=200) {
+        suma_energias= suma_energias + element.energias;
+        return element;
+      }
   });
-console.log ("------ Comidas Vegetales con Mas de 200 calorias --------");
-console.log (filtered);
-
-console.log ("------ Suma total de Calorias --------");
-console.log (sumaCalorias);
+setTimeout(function(){
+    console.log("Vegetales con Mas de 200 calorias");
+    console.log (filtered);
+    console.log("total de energia");
+    console.log (suma_energias);
+},5000)
